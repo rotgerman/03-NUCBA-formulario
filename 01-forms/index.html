@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+</head>
+<body>
+    <header>
+        <h1>Formularios</h1>
+    </header>
+    <main>
+        <h2>Completa el formulario para ser usuario</h2>
+        
+        <p>Completando la inscripcion, te regalamos un gatito</p>
+        <!-- GET manda los datos por la barra de direccion, y ademas lo podemos ver en la pesta;a network, POST en cambio no los expone de esa forma -->
+        <form method="GET">
+            
+                <h3>ingresa tus datos</h3>
+
+                <!-- imput text -->
+                <!-- el label le da el foco, y si el input no esta dentro del label se los relacion usando el for que tiene que coincider con el id -->
+                <label for="nombre"class="input-label" >Nombre: </label>
+                <input type="text" name="nombre" id="nombre" placeholder="juan" maxlength="24" disabled />
+                
+                <!-- el id es unico e irrepetible. las class si se pueden repetir -->
+                <!-- si anidamos input dentro del label, el for no es necesario -->
+                <label class="input-label"> Apellido 
+                    <input type="text" id="apellido" placeholder="gomez" maxlength="24" required />
+                </label>
+
+
+                <!-- input password -->
+                <label class="input-label"> Password
+                    <input type="password" name="password" id="password" placeholder="pone una clave que solo vos sepas">
+                </label>
+
+                <h3>decinos lo que opinas</h3>
+
+                <!-- textarea -->
+                <textarea name="comentario" id="comentario" cols="50" rows="20"placeholder="que opinas de nosotros?"> poner texto equivale al value del tipo text</textarea>
+                
+                <h3>Elegi que comidas queres</h3>
+
+                <!-- input checkbox -->
+
+                <label>
+                    <!-- el value es el valor de lo que el usuario elige, o de lo que escribe -->
+                    <input type="checkbox" name="desayuno" value="desayuno" checked>Desayuno
+
+                </label>
+                <label>
+                    <!-- cuando esta dentro del label, el texto es cloickeable tambien. si no tiene el label, solo la caja se puede clickear -->
+                <input type="checkbox" name="merienda" value="merienda">Merienda
+                </label>
+                <!-- diseable impide escribir -->
+                <input type="checkbox" name="cena" value="cena" disabled>Cena
+
+                <br>
+                <br>
+
+                <!-- input radio -->
+                <h3>Elegi cuanto donar!</h3>
+                <!-- los name es un conjunto de radios tienen que coincidir -->
+                    <label>
+                         <input type="radio" name="donacion" id="valor 1" value="50">$50
+                    </label>
+                    <label>
+                         <input type="radio" name="donacion" id="valor 2" value="150">$150
+                    </label>
+                    <label>
+                         <input type="radio" name="donacion" id="valor 3" value="250" checked>$250
+                    </label>
+
+                    <!-- select unico -->
+                <h3>elegi tus materias!</h3>
+                <select name="materia" id="materia">
+                    <option value="lengua">lengua</option>
+                    <option value="ingles">ingles</option>
+                    <option value="programacion">programacion</option>
+                    <option value="matematica" selected>matematica</option>
+                    <option value="geografia">geografia</option>
+                </select>
+
+                 <!-- select multiple -->
+                 <h3>elegi tus materias!</h3>
+                 <select name="materias" id="materias" multiple>
+                     <option value="lengua">lengua</option>
+                     <option value="ingles">ingles</option>
+                     <option value="programacion">programacion</option>
+                     <option value="matematica" selected>matematica</option>
+                     <option value="geografia">geografia</option>
+                 </select>
+
+                 <!-- file upload -->
+                 <h3>subi foto</h3>
+                 <!-- separando por comas el accept podemos poner varios tipos de archivo que se puede subir -->
+                 <input type="file" name="fotito" id="foto" accept="image/*,audio/*" >
+                 
+                 <!-- buttons -->
+                 <h3>ahora a enviarnos tus datos</h3>
+                 <!-- yo prefiero que los botones sean botones -->
+                <input type="submit" name="submit" value="mandame">
+
+                <!-- type date -->
+                <h3>decinos tu cumple</h3>
+                <label>
+                <input type="date" name="date" id="date">
+                </label>
+
+                </form>
+        </main>
+
+</body>
+</html>
